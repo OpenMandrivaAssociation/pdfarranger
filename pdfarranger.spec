@@ -18,6 +18,7 @@ BuildRequires:  intltool
 Requires:       python3dist(pygobject)
 Requires:       python3dist(pypdf2)
 Requires:       python3dist(pycairo)
+Requires:	python-pkg-resources
 
 Obsoletes:      pdfshuffler < 0.6.0-12
 Provides:       pdfshuffler = %{version}-%{release}
