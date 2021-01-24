@@ -1,6 +1,6 @@
 Name:           pdfarranger
-Version:        1.1.1
-Release:        2
+Version:        1.7.0
+Release:        1
 Summary:        PDF file merging, rearranging, and splitting
 Group:          Publishing
 License:        GPLv3
@@ -37,10 +37,10 @@ PDF-Shuffler that aims to "make the project a bit more active".
 %autopatch -p1
 
 %build
-%py3_build
+%py_build
 
 %install
-%{__python3} setup.py install --root %{buildroot}
+%{__python} setup.py install --root %{buildroot}
 
 %find_lang %{name}
 
@@ -55,28 +55,5 @@ PDF-Shuffler that aims to "make the project a bit more active".
 %{_datadir}/%{name}/%{name}.ui
 %{_iconsdir}/hicolor/*/apps/%{name}.png
 %{_iconsdir}/hicolor/scalable/apps/%{name}.svg
-%{python3_sitelib}/%{name}/
-%{python3_sitelib}/%{name}-%{version}-py%{python3_version}.egg-info
-
-
-%changelog
-* Tue Jan 08 2019 tv <tv> 1.1.1-3.mga7
-+ Revision: 1352215
-- rebuild with python 3.7
-
-* Mon Jan 07 2019 daviddavid <daviddavid> 1.1.1-2.mga7
-+ Revision: 1351037
-- rebuild for new Python 3.7
-
-* Sun Jan 06 2019 daviddavid <daviddavid> 1.1.1-1.mga7
-+ Revision: 1350015
-- new version: 1.1.1
-
-* Tue Dec 25 2018 daviddavid <daviddavid> 1.1-2.mga7
-+ Revision: 1344898
-- now obsoletes/provides pdfshuffler
-
-* Sun Dec 16 2018 daviddavid <daviddavid> 1.1-1.mga7
-+ Revision: 1341749
-- initial package pdfarranger
-
+%{python_sitelib}/%{name}/
+%{python_sitelib}/%{name}-%{version}-py%{python_version}.egg-info
