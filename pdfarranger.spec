@@ -6,7 +6,6 @@ Group:          Publishing
 License:        GPLv3
 URL:            https://github.com/jeromerobert/pdfarranger
 Source0:        https://github.com/jeromerobert/pdfarranger/archive/%{version}/%{name}-%{version}.tar.gz
-#Patch0:         pdfarranger-1.1-install-appdata-file.patch
 BuildArch:      noarch
 
 BuildRequires:  pkgconfig(python)
