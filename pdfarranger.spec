@@ -9,7 +9,7 @@ Source0:        https://github.com/jeromerobert/pdfarranger/archive/%{version}/%
 #Patch0:         pdfarranger-1.1-install-appdata-file.patch
 BuildArch:      noarch
 
-BuildRequires:  pkgconfig(python3)
+BuildRequires:  pkgconfig(python)
 BuildRequires:  python3dist(setuptools)
 BuildRequires:  python3dist(python-distutils-extra)
 BuildRequires:  gettext
@@ -45,15 +45,15 @@ PDF-Shuffler that aims to "make the project a bit more active".
 %find_lang %{name}
 
 %files -f %{name}.lang
-%doc AUTHORS ChangeLog README.md TODO
+%doc README.md
 %license COPYING
 %{_bindir}/%{name}
-%{_datadir}/applications/%{name}.desktop
-%{_datadir}/metainfo/%{name}.appdata.xml
+#{_datadir}/applications/%{name}.desktop
+#{_datadir}/metainfo/%{name}.appdata.xml
 %{_mandir}/man1/%{name}.1.*
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/%{name}.ui
-%{_iconsdir}/hicolor/*/apps/%{name}.png
-%{_iconsdir}/hicolor/scalable/apps/%{name}.svg
+#{_iconsdir}/hicolor/*/apps/%{name}.png
+#{_iconsdir}/hicolor/scalable/apps/%{name}.svg
 %{python_sitelib}/%{name}/
 %{python_sitelib}/%{name}-%{version}-py%{python_version}.egg-info
