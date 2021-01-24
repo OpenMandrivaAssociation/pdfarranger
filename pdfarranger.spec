@@ -52,6 +52,7 @@ PDF-Shuffler that aims to "make the project a bit more active".
 %{_mandir}/man1/%{name}.1.*
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/%{name}.ui
+%{_datadir}/pdfarranger/menu.ui
 %{_iconsdir}/hicolor/*x*/apps/com.github.jeromerobert.pdfarranger.png
 %{_iconsdir}/hicolor/scalable/apps/com.github.jeromerobert.pdfarranger.svg
 %{python_sitelib}/%{name}/
