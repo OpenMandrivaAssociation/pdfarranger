@@ -48,12 +48,12 @@ PDF-Shuffler that aims to "make the project a bit more active".
 %doc README.md
 %license COPYING
 %{_bindir}/%{name}
-#{_datadir}/applications/%{name}.desktop
-#{_datadir}/metainfo/%{name}.appdata.xml
+%{_datadir}/applications/com.github.jeromerobert.pdfarranger.desktop
+%{_datadir}/metainfo/com.github.jeromerobert.pdfarranger.metainfo.xml
 %{_mandir}/man1/%{name}.1.*
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/%{name}.ui
-#{_iconsdir}/hicolor/*/apps/%{name}.png
-#{_iconsdir}/hicolor/scalable/apps/%{name}.svg
+%{_iconsdir}/hicolor/*x*/apps/com.github.jeromerobert.pdfarranger.png
+%{_iconsdir}/hicolor/scalable/apps/com.github.jeromerobert.pdfarranger.svg
 %{python_sitelib}/%{name}/
 %{python_sitelib}/%{name}-%{version}-py%{python_version}.egg-info
