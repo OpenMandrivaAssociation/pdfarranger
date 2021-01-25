@@ -17,8 +17,11 @@ BuildRequires:  intltool
 Requires:       python3dist(pygobject)
 Requires:       python3dist(pypdf2)
 Requires:       python3dist(pycairo)
+Requires:       python3dist(pikepdf)
+Requires:       python3dist(python-dateutil)
 Requires:	python-pkg-resources
 Requires:	typelib(Poppler)
+Recommends:     python3dist(img2pdf)
 
 Obsoletes:      pdfshuffler < 0.6.0-12
 Provides:       pdfshuffler = %{version}-%{release}
