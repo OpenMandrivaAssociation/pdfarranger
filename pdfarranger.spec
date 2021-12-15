@@ -58,5 +58,6 @@ PDF-Shuffler that aims to "make the project a bit more active".
 %{_datadir}/pdfarranger/menu.ui
 %{_iconsdir}/hicolor/*x*/apps/com.github.jeromerobert.pdfarranger.png
 %{_iconsdir}/hicolor/scalable/apps/com.github.jeromerobert.pdfarranger.svg
+%{_iconsdir}/hicolor/symbolic/apps/com.github.jeromerobert.pdfarranger-symbolic.svg
 %{python_sitelib}/%{name}/
 %{python_sitelib}/%{name}-%{version}-py%{python_version}.egg-info
