@@ -1,5 +1,5 @@
 Name:           pdfarranger
-Version:        1.9.0
+Version:        1.9.1
 Release:        1
 Summary:        PDF file merging, rearranging, and splitting
 Group:          Publishing
