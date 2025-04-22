@@ -14,11 +14,6 @@ BuildRequires:  python3dist(python-distutils-extra)
 BuildRequires:  gettext
 BuildRequires:  intltool
 
-Requires:       python%{pyver}dist(pygobject)
-Requires:       python%{pyver}dist(pypdf2)
-Requires:       python%{pyver}dist(pycairo)
-Requires:       python%{pyver}dist(pikepdf)
-Requires:       python%{pyver}dist(python-dateutil)
 Requires:	python-pkg-resources
 Requires:	typelib(Poppler)
 
@@ -35,18 +30,6 @@ pages using an interactive and intuitive graphical interface.
 The tool, which is a graphical front-end for PyPDF2, is a fork of
 PDF-Shuffler that aims to "make the project a bit more active".
 
-%prep
-%autosetup -p1
-
-%build
-%py_build
-
-%install
-%{__python} setup.py install --root %{buildroot}
-#py_install
-
-%find_lang %{name}
-
 %files -f %{name}.lang
 %doc README.md
 %license COPYING
@@ -61,4 +44,19 @@ PDF-Shuffler that aims to "make the project a bit more active".
 %{_iconsdir}/hicolor/scalable/apps/com.github.jeromerobert.pdfarranger.svg
 %{_iconsdir}/hicolor/symbolic/apps/com.github.jeromerobert.pdfarranger-symbolic.svg
 %{python_sitelib}/%{name}/
-%{python_sitelib}/%{name}-%{version}-py%{python_version}.egg-info
+%{python_sitelib}/%{name}-%{version}-*.*-info
+
+#----------------------------------------------------------------------
+
+%prep
+%autosetup -p1
+
+%build
+%py_build
+
+%install
+%{__python} setup.py install --root %{buildroot}
+#py_install
+
+%find_lang %{name}
+
