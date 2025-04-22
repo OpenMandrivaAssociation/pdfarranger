@@ -1,6 +1,6 @@
 Name:           pdfarranger
 Version:        1.11.1
-Release:        1
+Release:        2
 Summary:        PDF file merging, rearranging, and splitting
 Group:          Publishing
 License:        GPLv3
@@ -14,14 +14,15 @@ BuildRequires:  python3dist(python-distutils-extra)
 BuildRequires:  gettext
 BuildRequires:  intltool
 
-Requires:       python3dist(pygobject)
-Requires:       python3dist(pypdf2)
-Requires:       python3dist(pycairo)
-Requires:       python3dist(pikepdf)
-Requires:       python3dist(python-dateutil)
+Requires:       python%{pyver}dist(pygobject)
+Requires:       python%{pyver}dist(pypdf2)
+Requires:       python%{pyver}dist(pycairo)
+Requires:       python%{pyver}dist(pikepdf)
+Requires:       python%{pyver}dist(python-dateutil)
 Requires:	python-pkg-resources
 Requires:	typelib(Poppler)
-Recommends:     python3dist(img2pdf)
+
+Recommends:     python%{pyver}dist(img2pdf)
 
 Obsoletes:      pdfshuffler < 0.6.0-12
 Provides:       pdfshuffler = %{version}-%{release}
@@ -35,14 +36,14 @@ The tool, which is a graphical front-end for PyPDF2, is a fork of
 PDF-Shuffler that aims to "make the project a bit more active".
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -p1
 
 %build
 %py_build
 
 %install
 %{__python} setup.py install --root %{buildroot}
+#py_install
 
 %find_lang %{name}
 
