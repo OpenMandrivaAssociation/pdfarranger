@@ -1,6 +1,6 @@
 Name:           pdfarranger
 Version:        1.12.1
-Release:        2
+Release:        3
 Summary:        PDF file merging, rearranging, and splitting
 Group:          Publishing
 License:        GPLv3
