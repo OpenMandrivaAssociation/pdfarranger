@@ -1,22 +1,22 @@
-Name:           pdfarranger
-Version:        1.12.1
-Release:        3
-Summary:        PDF file merging, rearranging, and splitting
-Group:          Publishing
-License:        GPLv3
-URL:            https://github.com/jeromerobert/pdfarranger
-Source0:        https://github.com/jeromerobert/pdfarranger/archive/%{version}/%{name}-%{version}.tar.gz
-BuildArch:      noarch
+%define module pdfarranger
 
-BuildRequires:  pkgconfig(python)
-BuildRequires:  python3dist(setuptools)
-BuildRequires:  python3dist(python-distutils-extra)
-BuildRequires:  gettext
-BuildRequires:  intltool
-
-Requires:	python-pkg-resources
-Requires:	typelib(Poppler)
-
+Name:		pdfarranger
+Version:	1.12.1
+Release:	3
+Summary:	PDF file merging, rearranging, and splitting
+Group:		Publishing
+License:	GPL-3.0-only
+URL:		https://github.com/jeromerobert/pdfarranger
+Source0:	https://github.com/jeromerobert/pdfarranger/archive/%{version}/%{name}-%{version}.tar.gz
+BuildSystem:	python
+BuildArch:	noarch
+BuildRequires:	gettext
+BuildRequires:	hicolor-icon-theme
+BuildRequires:	intltool
+BuildRequires:	pkgconfig(python)
+BuildRequires:	python%{pyver}dist(pip)
+BuildRequires:	python%{pyver}dist(setuptools)
+BuildRequires:	python%{pyver}dist(wheel)
 Recommends:     python%{pyver}dist(img2pdf)
 
 Obsoletes:      pdfshuffler < 0.6.0-12
@@ -29,6 +29,13 @@ pages using an interactive and intuitive graphical interface.
 
 The tool, which is a graphical front-end for PyPDF2, is a fork of
 PDF-Shuffler that aims to "make the project a bit more active".
+
+%prep -p
+rm -rf %{module}.egg-info
+
+%install
+%{__python} setup.py install --root %{buildroot}
+%find_lang %{name}
 
 %files -f %{name}.lang
 %doc README.md
@@ -45,18 +52,3 @@ PDF-Shuffler that aims to "make the project a bit more active".
 %{_iconsdir}/hicolor/symbolic/apps/com.github.jeromerobert.pdfarranger-symbolic.svg
 %{python_sitelib}/%{name}/
 %{python_sitelib}/%{name}-%{version}-*.*-info
-
-#----------------------------------------------------------------------
-
-%prep
-%autosetup -p1
-
-%build
-%py_build
-
-%install
-%{__python} setup.py install --root %{buildroot}
-#py_install
-
-%find_lang %{name}
-
