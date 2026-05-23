@@ -1,13 +1,14 @@
 %define module pdfarranger
 
 Name:		pdfarranger
-Version:	1.13.0
+Version:	1.14.0
 Release:	1
 Summary:	PDF file merging, rearranging, and splitting
 Group:		Publishing
 License:	GPL-3.0-only
 URL:		https://github.com/jeromerobert/pdfarranger
 Source0:	https://github.com/jeromerobert/pdfarranger/archive/%{version}/%{name}-%{version}.tar.gz
+
 BuildSystem:	python
 BuildArch:	noarch
 BuildRequires:	gettext
