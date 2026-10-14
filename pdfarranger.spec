@@ -2,7 +2,7 @@
 
 Name:		pdfarranger
 Version:	1.14.0
-Release:	1
+Release:	2
 Summary:	PDF file merging, rearranging, and splitting
 Group:		Publishing
 License:	GPL-3.0-only
@@ -14,7 +14,7 @@ BuildArch:	noarch
 BuildRequires:	gettext
 BuildRequires:	hicolor-icon-theme
 BuildRequires:	intltool
-BuildRequires:	pkgconfig(python)
+BuildRequires:	pkgconfig(python3)
 BuildRequires:	python%{pyver}dist(pip)
 BuildRequires:	python%{pyver}dist(setuptools)
 BuildRequires:	python%{pyver}dist(wheel)
